@@ -3,13 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>NTU Lightware
-  </title>
+  <title>NTU Lightware</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
     body {
@@ -26,190 +25,288 @@
 <body>
 
   <div class="container-fluid">
-
     <div class="row min-vh-100 justify-content-center">
-
       <div class="col-12 p-4 d-flex justify-content-center">
 
         <div class="main-wrapper w-100">
 
-          <h1 class="text-center fw-light mb-4">
-            NTU Lightware
-          </h1>
+          <h1 class="text-center fw-light mb-4">NTU Lightware</h1>
 
+          <!-- INPUT -->
           <div class="card border-0 shadow-sm rounded-4 mb-4">
-
             <div class="card-body p-4">
 
-              <h3 class="mb-4 text-center">
-                Input Selection
-              </h3>
+              <h3 class="mb-4 text-center">Input Selection</h3>
 
               <div class="row g-3" id="inputGroup">
 
-                <div id="Desktop" class="col-12 col-sm-6 col-md-4 mb-lg-2 mb-md-2">
-
-                  <button
-                    class="btn btn-primary w-100 rounded-4 select-btn active d-flex align-items-center justify-content-center text-center py-3 fs-5"
-                    style="min-height:90px;">
+                <div id="Desktop" class="col-12 col-sm-6 col-md-4">
+                  <button class="btn btn-primary w-100 rounded-4 select-btn py-3 fs-5" style="min-height:90px;">
                     Desktop
                   </button>
-
                 </div>
 
-                <div id="Laptop1" class="col-12 col-sm-6 col-md-4 mb-lg-2 mb-md-2">
-
-                  <button
-                    class="btn btn-outline-primary w-100 rounded-4 select-btn d-flex align-items-center justify-content-center text-center py-3 fs-5"
-                    style="min-height:90px;">
+                <div id="Laptop1" class="col-12 col-sm-6 col-md-4">
+                  <button class="btn btn-outline-primary w-100 rounded-4 select-btn py-3 fs-5" style="min-height:90px;">
                     Laptop 1
                   </button>
-
                 </div>
 
-                <div id="Laptop2" class="col-12 col-sm-6 col-md-4 mb-lg-2 mb-md-2">
-
-                  <button
-                    class="btn btn-outline-primary w-100 rounded-4 select-btn d-flex align-items-center justify-content-center text-center py-3 fs-5"
-                    style="min-height:90px;">
+                <div id="Laptop2" class="col-12 col-sm-6 col-md-4">
+                  <button class="btn btn-outline-primary w-100 rounded-4 select-btn py-3 fs-5" style="min-height:90px;">
                     Laptop 2
                   </button>
-
                 </div>
 
-                <div id="Spare" class="col-12 col-sm-6 col-md-4 mb-lg-2 mb-md-2">
-
-                  <button
-                    class="btn btn-outline-primary w-100 rounded-4 select-btn d-flex align-items-center justify-content-center text-center py-3 fs-5"
-                    style="min-height:90px;">
+                <div id="Spare" class="col-12 col-sm-6 col-md-4">
+                  <button class="btn btn-outline-primary w-100 rounded-4 select-btn py-3 fs-5" style="min-height:90px;">
                     Spare
                   </button>
-
                 </div>
 
-                <div id="WirelessPresentation" class="col-12 col-sm-6 col-md-4 mb-lg-2 mb-md-2">
-
-                  <button
-                    class="btn btn-outline-primary w-100 rounded-4 select-btn d-flex align-items-center justify-content-center text-center py-3 fs-5"
-                    style="min-height:90px;">
+                <div id="WirelessPresentation" class="col-12 col-sm-6 col-md-4">
+                  <button class="btn btn-outline-primary w-100 rounded-4 select-btn py-3 fs-5" style="min-height:90px;">
                     Wireless Presentation
                   </button>
-
                 </div>
 
-                <div id="visualizer" class="col-12 col-sm-6 col-md-4 mb-lg-2 mb-md-2">
-
-                  <button
-                    class="btn btn-outline-primary w-100 rounded-4 select-btn d-flex align-items-center justify-content-center text-center py-3 fs-5"
-                    style="min-height:90px;">
+                <div id="visualizer" class="col-12 col-sm-6 col-md-4">
+                  <button class="btn btn-outline-primary w-100 rounded-4 select-btn py-3 fs-5" style="min-height:90px;">
                     Visualizer
                   </button>
-
                 </div>
 
               </div>
 
             </div>
-
           </div>
 
-          <div class="card border-0 shadow-sm rounded-4 mt-lg-5">
-
+          <!-- OUTPUT -->
+          <div class="card border-0 shadow-sm rounded-4">
             <div class="card-body p-4">
 
-              <h3 class="mb-4 text-center">
-                Output Selection
-              </h3>
+              <h3 class="mb-4 text-center">Output Selection</h3>
 
               <div class="row g-3" id="outputGroup">
 
-                <div id="tv1" class="col-12 col-sm-6 col-md-4 mb-lg-2 mb-md-2">
-
-                  <button
-                    class="btn btn-primary w-100 rounded-4 select-btn active d-flex align-items-center justify-content-center text-center py-3 fs-5"
-                    style="min-height:90px;">
+                <div id="tv1" class="col-12 col-sm-6 col-md-4">
+                  <button class="btn btn-primary w-100 rounded-4 select-btn py-3 fs-5" style="min-height:90px;">
                     TV 1
                   </button>
-
                 </div>
 
-                <div id="tv2" class="col-12 col-sm-6 col-md-4 mb-lg-2 mb-md-2">
-
-                  <button
-                    class="btn btn-outline-primary w-100 rounded-4 select-btn d-flex align-items-center justify-content-center text-center py-3 fs-5"
-                    style="min-height:90px;">
+                <div id="tv2" class="col-12 col-sm-6 col-md-4">
+                  <button class="btn btn-outline-primary w-100 rounded-4 select-btn py-3 fs-5" style="min-height:90px;">
                     TV 2
                   </button>
-
                 </div>
 
-                <div id="tv3" class="col-12 col-sm-6 col-md-4 mb-lg-2 mb-md-2">
-
-                  <button
-                    class="btn btn-outline-primary w-100 rounded-4 select-btn d-flex align-items-center justify-content-center text-center py-3 fs-5"
-                    style="min-height:90px;">
+                <div id="tv3" class="col-12 col-sm-6 col-md-4">
+                  <button class="btn btn-outline-primary w-100 rounded-4 select-btn py-3 fs-5" style="min-height:90px;">
                     TV 3
                   </button>
-
                 </div>
 
-                <div id="tv4" class="col-12 col-sm-6 col-md-4 mb-lg-2 mb-md-2">
-
-                  <button
-                    class="btn btn-outline-primary w-100 rounded-4 select-btn d-flex align-items-center justify-content-center text-center py-3 fs-5"
-                    style="min-height:90px;">
+                <div id="tv4" class="col-12 col-sm-6 col-md-4">
+                  <button class="btn btn-outline-primary w-100 rounded-4 select-btn py-3 fs-5" style="min-height:90px;">
                     TV 4
                   </button>
-
                 </div>
 
-                <div id="tv5" class="col-12 col-sm-6 col-md-4 mb-lg-2 mb-md-2">
-
-                  <button
-                    class="btn btn-outline-primary w-100 rounded-4 select-btn d-flex align-items-center justify-content-center text-center py-3 fs-5"
-                    style="min-height:90px;">
+                <div id="tv5" class="col-12 col-sm-6 col-md-4">
+                  <button class="btn btn-outline-primary w-100 rounded-4 select-btn py-3 fs-5" style="min-height:90px;">
                     TV 5
                   </button>
-
                 </div>
 
               </div>
 
             </div>
-
           </div>
 
         </div>
 
       </div>
-
     </div>
+  </div>
 
+  <!-- MODAL -->
+  <div class="modal fade" id="tvControlModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+
+        <div class="modal-header">
+          <h5 class="modal-title">Output Control Panel</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body text-center">
+
+          <div id="modalSelectedTV" class="mb-3 text-muted">Select a TV</div>
+
+          <div class="d-grid gap-3">
+            <button id="btnOn" class="btn btn-success py-3 fs-5">ON</button>
+            <button id="btnOff" class="btn btn-danger py-3 fs-5">OFF</button>
+            <button id="btnMute" class="btn btn-warning py-3 fs-5">MUTE</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
   </div>
 
   <script>
 
-    function setupGroup(selector) {
-      const buttons = document.querySelectorAll(selector);
+    let currentTV = "tv1";
 
-      buttons.forEach(btn => {
-        btn.onclick = () => {
-          buttons.forEach(b => {
-            b.classList.remove('btn-primary', 'active');
-            b.classList.add('btn-outline-primary');
-          });
+    let tvState = {
+      tv1: { power: "OFF", mute: false },
+      tv2: { power: "OFF", mute: false },
+      tv3: { power: "OFF", mute: false },
+      tv4: { power: "OFF", mute: false },
+      tv5: { power: "OFF", mute: false }
+    };
 
-          btn.classList.remove('btn-outline-primary');
-          btn.classList.add('btn-primary', 'active');
+    let currentInput = "Desktop";
 
-          console.log("Selected:", btn.id);
-        };
+    document.querySelectorAll('#inputGroup .select-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+
+        const inputName = btn.parentElement.id;
+        currentInput = inputName;
+
+        updateInputUI();
+      });
+    });
+
+    function updateInputUI() {
+      document.querySelectorAll('#inputGroup .select-btn').forEach(btn => {
+        const inputName = btn.parentElement.id;
+
+        btn.className =
+          "btn w-100 rounded-4 select-btn py-3 fs-5 " +
+          (inputName === currentInput ? "btn-primary" : "btn-outline-primary");
       });
     }
 
-    setupGroup('#inputGroup .select-btn');
-    setupGroup('#outputGroup .select-btn');
+    document.querySelectorAll('#outputGroup .select-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tvName = btn.parentElement.id;
+        switchTV(tvName);
+        openControlModal(tvName);
+      });
+    });
 
+    function switchTV(tvName) {
+      currentTV = tvName;
+      updateAllTVButtons();
+    }
+
+    function openControlModal(tvName) {
+
+      currentTV = tvName;
+
+      const modal = bootstrap.Modal.getOrCreateInstance(
+        document.getElementById('tvControlModal')
+      );
+
+      renderModalStatus();
+
+      modal.show();
+    }
+    function renderModalStatus() {
+
+      const tv = tvState[currentTV];
+
+      let statusBadge = "";
+
+      if (tv._touched) {
+
+        if (tv.power === "ON") {
+          statusBadge += `<span class="badge bg-success ms-2">ON</span>`;
+        }
+
+        if (tv.power === "OFF") {
+          statusBadge += `<span class="badge bg-secondary ms-2">OFF</span>`;
+        }
+
+        if (tv.mute && tv.power === "ON") {
+          statusBadge += `<span class="badge bg-warning text-dark ms-2">MUTE</span>`;
+        }
+      }
+
+      document.getElementById("modalSelectedTV").innerHTML =
+        `Controlling: <b>${currentTV.toUpperCase()}</b> ${statusBadge}`;
+    }
+
+    function tvCommand(cmd) {
+
+      const tv = tvState[currentTV];
+
+      if (cmd === "ON") {
+        tv.power = "ON";
+        tv._touched = true;
+      }
+
+      if (cmd === "OFF") {
+        tv.power = "OFF";
+        tv.mute = false;
+        tv._touched = true;
+      }
+
+      if (cmd === "MUTE" && tv.power === "ON") {
+        tv.mute = !tv.mute;
+      }
+
+      updateAllTVButtons();
+
+      renderModalStatus();
+    }
+
+    function updateTVButtonUI(tvName) {
+
+      const btn = document.querySelector(`#${tvName} button`);
+      const tv = tvState[tvName];
+
+      let powerBadge = "";
+      let muteBadge = "";
+
+      if (tv.power === "ON") {
+        powerBadge = `<span class="badge bg-success ms-2">ON</span>`;
+      }
+
+      if (tv.power === "OFF" && tv._touched) {
+        powerBadge = `<span class="badge bg-secondary ms-2">OFF</span>`;
+      }
+
+      if (tv.mute && tv.power === "ON") {
+        muteBadge = `<span class="badge bg-warning text-dark ms-1">MUTE</span>`;
+      }
+
+      btn.className =
+        "btn w-100 rounded-4 select-btn py-3 fs-5 " +
+        (tvName === currentTV ? "btn-primary" : "btn-outline-primary");
+
+      btn.innerHTML = `
+    ${tvName.toUpperCase()}
+    ${powerBadge}
+    ${muteBadge}
+  `;
+    }
+
+    function updateAllTVButtons() {
+      Object.keys(tvState).forEach(updateTVButtonUI);
+    }
+
+    /* BUTTON EVENTS */
+    document.getElementById("btnOn").onclick = () => tvCommand("ON");
+    document.getElementById("btnOff").onclick = () => tvCommand("OFF");
+    document.getElementById("btnMute").onclick = () => tvCommand("MUTE");
+
+    /* INIT */
+    updateAllTVButtons();
+    updateInputUI();
 
   </script>
 

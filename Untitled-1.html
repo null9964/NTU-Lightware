@@ -8,6 +8,7 @@
   <title>NTU Lightware</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
     body {
@@ -32,24 +33,18 @@
 <body>
 
   <div class="container-fluid">
-
     <div class="row min-vh-100 justify-content-center">
-
       <div class="col-12 p-4 d-flex justify-content-center">
 
         <div class="main-wrapper w-100">
 
-          <h1 class="text-center fw-light mb-4">
-            NTU Lightware
-          </h1>
+          <h1 class="text-center fw-light mb-4">NTU Lightware</h1>
 
+          <!-- INPUT -->
           <div class="card border-0 shadow-sm rounded-4 mb-4">
-
             <div class="card-body p-4">
 
-              <h3 class="mb-4 text-center">
-                Input Selection
-              </h3>
+              <h3 class="mb-4 text-center">Input Selection</h3>
 
               <div class="row g-3">
 
@@ -98,16 +93,13 @@
               </div>
 
             </div>
-
           </div>
 
-          <div class="card border-0 shadow-sm rounded-4 mt-lg-5">
-
+          <!-- OUTPUT -->
+          <div class="card border-0 shadow-sm rounded-4">
             <div class="card-body p-4">
 
-              <h3 class="mb-4 text-center">
-                Output Selection
-              </h3>
+              <h3 class="mb-4 text-center">Output Selection</h3>
 
               <div class="row g-3">
 
@@ -149,16 +141,111 @@
               </div>
 
             </div>
-
           </div>
 
         </div>
 
       </div>
-
     </div>
-
   </div>
+
+  <!-- MODAL -->
+  <div class="modal fade" id="tvControlModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+
+        <div class="modal-header">
+          <h5 class="modal-title">Output Control Panel</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body text-center">
+
+          <div id="modalSelectedTV" class="mb-3 text-muted">Select a TV</div>
+
+          <div class="d-grid gap-3">
+            <button id="btnOn" class="btn btn-success py-3 fs-5">ON</button>
+            <button id="btnOff" class="btn btn-danger py-3 fs-5">OFF</button>
+            <button id="btnMute" class="btn btn-warning py-3 fs-5">MUTE</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    let currentTV = "tv1";
+
+    let tvState = {
+      tv1: { power: "OFF", mute: false },
+      tv2: { power: "OFF", mute: false },
+      tv3: { power: "OFF", mute: false },
+      tv4: { power: "OFF", mute: false },
+      tv5: { power: "OFF", mute: false }
+    };
+
+    function openControlModal(tvName) {
+
+      currentTV = tvName;
+
+      const modal = bootstrap.Modal.getOrCreateInstance(
+        document.getElementById('tvControlModal')
+      );
+
+      renderModalStatus();
+      modal.show();
+    }
+
+    document.querySelectorAll('input[name="tv"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        openControlModal(radio.id);
+      });
+    });
+
+    function renderModalStatus() {
+
+      const tv = tvState[currentTV];
+
+      let status = "";
+
+      if (tv.power === "ON") status += `<span class="badge bg-success ms-2">ON</span>`;
+      if (tv.power === "OFF" && tv._touched) status += `<span class="badge bg-secondary ms-2">OFF</span>`;
+      if (tv.mute && tv.power === "ON") status += `<span class="badge bg-warning text-dark ms-2">MUTE</span>`;
+
+      document.getElementById("modalSelectedTV").innerHTML =
+        `Controlling: <b>${currentTV.toUpperCase()}</b> ${status}`;
+    }
+
+    function tvCommand(cmd) {
+
+      const tv = tvState[currentTV];
+
+      if (cmd === "ON") {
+        tv.power = "ON";
+        tv._touched = true;
+      }
+
+      if (cmd === "OFF") {
+        tv.power = "OFF";
+        tv.mute = false;
+        tv._touched = true;
+      }
+
+      if (cmd === "MUTE" && tv.power === "ON") {
+        tv.mute = !tv.mute;
+      }
+
+      renderModalStatus();
+    }
+
+    document.getElementById("btnOn").onclick = () => tvCommand("ON");
+    document.getElementById("btnOff").onclick = () => tvCommand("OFF");
+    document.getElementById("btnMute").onclick = () => tvCommand("MUTE");
+
+  </script>
 
 </body>
 
