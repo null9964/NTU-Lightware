@@ -78,7 +78,8 @@
 
                 <div class="col-12 col-sm-6 col-md-4">
                   <input type="radio" class="btn-check" name="input" id="WirelessPresentation">
-                  <label class="btn btn-outline-primary w-100 rounded-4 py-3 fs-5 radio-label" for="WirelessPresentation">
+                  <label class="btn btn-outline-primary w-100 rounded-4 py-3 fs-5 radio-label"
+                    for="WirelessPresentation">
                     Wireless Presentation
                   </label>
                 </div>
@@ -175,7 +176,94 @@
     </div>
   </div>
 
+  <!-- ROTATE DEVICE OVERLAY -->
+  <div id="rotateOverlay">
+
+    <div class="rotate-box">
+
+      <div class="phone-icon">
+        📱
+      </div>
+
+      <h3>Please Rotate Your Device</h3>
+
+      <p>
+        For the best experience, use landscape mode.
+      </p>
+
+    </div>
+
+  </div>
+
+  <style>
+    /* ROTATE OVERLAY */
+
+    #rotateOverlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 9999;
+
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .rotate-box {
+      max-width: 300px;
+    }
+
+    .phone-icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+
+      animation: rotatePhone 1.5s ease-in-out infinite;
+    }
+
+    @keyframes rotatePhone {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(-90deg);
+      }
+
+      50% {
+        transform: rotate(-90deg);
+      }
+
+      75% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+
   <script>
+
+    function checkOrientation() {
+
+      const overlay = document.getElementById("rotateOverlay");
+
+      // show only on mobile portrait
+      if (window.innerWidth < 900 && window.innerHeight > window.innerWidth) {
+        overlay.style.display = "flex";
+      } else {
+        overlay.style.display = "none";
+      }
+    }
+
+    window.addEventListener("load", checkOrientation);
+    window.addEventListener("resize", checkOrientation);
+    window.addEventListener("orientationchange", checkOrientation);
 
     let currentTV = "tv1";
 
